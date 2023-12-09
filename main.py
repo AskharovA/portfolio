@@ -79,6 +79,9 @@ if selected == 'О себе':
     - 2022 - 2023 г. Step IT Academy Atyrau\n
         Специальность: Backend разработка на Python
     """)
+    with st.expander('Посмотреть Диплом'):
+        st.image('diploma/1.jpg', use_column_width=True)
+        st.image('diploma/2.jpg', use_column_width=True)
     st.write('---')
     st.header("Сертификаты")
     st.write('Нажмите, чтобы посмотреть сертификат об окончаний курса.')
