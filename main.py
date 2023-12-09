@@ -3,8 +3,14 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title='Резюме')
 
-st.subheader("Добро пожаловать :wave:")
-st.title("Резюме Асхаров А.")
+font_awesome_css = st.write(
+    """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    """, unsafe_allow_html=True
+)
+
+st.title("Асхаров А.")
+st.subheader("Python программист и Backend разработчик")
 
 with st.container():
     selected = option_menu(
@@ -16,82 +22,62 @@ with st.container():
 
 if selected == 'О себе':
     st.header("О себе")
-    st.write("""
-    Асхаров Акылбек Ануарович\n
-    :date: 1993 года рождения\n
-    :email: a.askharov@gmail.com\n
-    :phone: +7 (771) 869-63-93
-    """)
-
-    st.markdown(
-        "<style>.text-justify { text-align: justify;}</style>"
-        "<div class='text-justify'>"
-        "Начинающий специалист в области backend-разработки с пониманием программирования на Python "
-        "и создания веб-приложений с использованием Django. Имею опыт реализации RESTful API и работы с реляционными "
-        "базами данных."
-        "</div>", unsafe_allow_html=True)
-    st.write('---')
-    st.header("Технические навыки")
     col1, col2 = st.columns(2)
     with col1:
         st.write("""
-        - Языки программирования:
-            - Python
-            - JavaScript\n
-
-        - Фреймворки:
-            - Django
-            - DjangoRestFramework
-            - FastAPI\n
-
-        - Веб технологии:
-            - HTML5
-            - CSS3
-            - AJAX
-            - WebSockets
-            - REST API
-            - Docker
-            - Git\n
-        """)
+        ФИО: Асхаров Акылбек Ануарович\n
+        :taurus: Год рождения: 1993 г.\n
+        :e-mail: email: a.askharov@gmail.com\n
+        :iphone: phone: +7 (771) 869-63-93\n
+        :link: GitHub page: [AskharovA](https://github.com/AskharovA)
+        """, unsafe_allow_html=True)
     with col2:
-        st.write("""
-        - Базы данных:
-            - PostgreSQL
-            - MySQL
-            - SQLite3
-            - MongoDB\n
-
-        - Библиотеки:
-            - StreamLit
-            - Flet
-            - PyWebIo
-            - eel
-            - SQL Alchemy
-            - Bootstrap
-            - HTMX
-            - CustomTkinter\n
-        """)
-    st.write('---')
-    st.header('Дополнительное знание программ')
-    col3, col4 = st.columns(2)
-    with col3:
-        st.write("""
-        - Adobe Photoshop
-        - Adobe Illustrator
-        - Adobe After Effects
-        - Adobe Premier Pro
-        - MAGIX Vegas Pro
-        - Cubase Elements
-        """)
-    with col4:
         st.image('coding.gif', use_column_width=True)
+    st.markdown(
+        "<style>.text-justify { text-align: justify; text-indent: 1rem;}</style>"
+        "<div class='text-justify'>"
+        "Начинающий специалист в области backend-разработки с пониманием программирования на Python "
+        "и создания веб-приложений с использованием Django. Имею опыт реализации RESTful API и работы с реляционной "
+        "базой данных PostgreSQL."
+        "</div><br>", unsafe_allow_html=True)
+    st.write(
+        """
+        - 7 лет опыт работы в сфере IT
+        - 1 год опыт программирования
+        """
+    )
+    st.write('---')
+    st.header("Технические навыки")
+    st.write(
+        """
+        - Программирование на языке :orange[**Python**]
+        - Асинхронное программирование
+        - Модульное и интеграционное тестирование
+        - Создание пользовательских графических интерфейсов (GUI)
+        - Создание Backend веб-приложений с помощью :orange[**Django**]
+        - Создание REST API с помощью :orange[**Django REST Framework**]
+        - Работа с реляционной базой данных :orange[**PostgreSQL**]
+        - Работа с нереляционной базой данных :orange[**MongoDB**]
+        - Создание асинхронных задач :orange[**Celery**]
+        - Работа с Вебсокетами
+        - Знание Frontend веб-технологии:
+            - Работа с :orange[**DOM**]
+            - Гипертекстовая разметка веб-страниц :orange[**HTML5**]
+            - Работа со стилями :orange[**CSS3**] и фреймворком :orange[**Bootstrap5**]
+            - Создание одностраничных и интерактивных приложений (SPA) с использованием :orange[**HTMX**]
+        - Работа с кодом и системой управления версии :orange[**Git**], :orange[**GitHub**], :orange[**GitFlow**]
+        - Контейнеризация и оркестрация с помощью :orange[**Docker**] и :orange[**Docker-Compose**]
+        - Развертывание (:orange[**Deploy**]) веб-приложений на виртуальных серверах (:orange[**VPS**])
+        - Установка :orange[**SSL**] сертификтов
+        """
+    )
     st.write('---')
     st.header("Образование")
     st.write("""
     - 2011 - 2015 г. Атырауский Институт Нефти и Газа\n
         Специальность: Автоматизация технологических процессов (бакалавриат)
     - 2022 - 2023 г. Step IT Academy Atyrau\n
-        Специальность: Backend разработка на Python | Django
+        Специальность: Backend разработка на Python
     """)
     st.write('---')
     st.header("Сертификаты")
@@ -111,6 +97,9 @@ if selected == 'О себе':
     with st.expander('"Объектно-ориентированное программирование на Python", Stepik, 2023г.'):
         st.image('cert/5.jpg', use_column_width=True)
 
+    with st.expander('"Django, shall we dance?", Stepik, 2023г.'):
+        st.image('cert/8.jpg', use_column_width=True)
+
     with st.expander('"Django 4 для начинающих", Stepik, 2023г.'):
         st.image('cert/6.jpg', use_column_width=True)
 
@@ -127,19 +116,98 @@ if selected == 'О себе':
 
     st.write('---')
     st.header("Дополнительная информация")
-    st.write('- Английский язык: B1 (Intermediate)')
     st.write("""
-    - Хобби
-        - Игра на гитаре
-        - Кодинг
-        - Компьютерные игры
-        - Сборка компьютеров
+    - Английский язык: B1 (Intermediate)
+    - Личные качества:
+        - Способность быстро обучаться
+        - Адаптивность
+        - Ориентация на качество кода
+        - Терпение и настойчивость
     """)
+    st.write("""
+    - Хобби:
+        - Игра на гитаре :orange[<i class="fa-solid fa-guitar"></i>]
+        - Кодинг :orange[<i class="fa-solid fa-laptop-code"></i>]
+        - Сборка компьютеров :orange[<i class="fa-solid fa-desktop"></i>]
+        - Изучение новых технологий :orange[<i class="fa-solid fa-microchip"></i>]
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     <style>
         img {
             border-radius: 10px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+if selected == 'Проекты':
+    st.header('PlayQuiz - платформа для создания и проведения онлайн викторин в реальном времени')
+    st.image('media/PlayQuiz.jpg', use_column_width=True)
+    st.write("""
+    :link: GitHub репозиторий: [AskharovA/django_online_quiz](https://github.com/AskharovA/django_online_quiz)\n
+    :link: Страница веб-приложения: [playquiz.kz](https://playquiz.kz/)\n
+    Платформа PlayQuiz - это FullStack веб-приложение созданный на основе фреймворка Django. Основной задачей является 
+    предоставить пользователям инструмент для создания индивидуальных квизов и возможность участвовать в онлайн играх 
+    с другими пользователями в реальном времени.\n
+    Стек технологии:
+    - Django: Основа веб-приложения, обеспечивающий backend и frontend.
+    - HTML & CSS & Bootstrap: Структура и стиль интерфейса пользователя.
+    - JavaScript & HTMX: Динамическое взаимодействие на стороне клиента. Отправка AJAX запросов.
+    - PostgreSQL: База данных.
+    - Celery: Организация асинхронных задач.
+    - Eventlet Запуск асинхронных задач Celery.
+    - Redis: Брокер сообщений, создание очереди задач.
+    - Django Channels: Расширение веб-протокола Django, обработка WebSockets. Обработка данных в асинхронном режиме.
+    - Channels-Redis: Основной канальный слой Channels.
+    - Daphne: ASGI-сервер. Обработка входящих соединений WebSockets.
+    - uWSGI: Веб сервер. Обеспечение эффективной загрузки.
+    - NGINX: HTTP-сервер. Перенаправление запросов к uWSGI и Daphne.
+    - Docker и Docker-compose: Контейнеризация и определение запуска веб-приложения.
+    - Certbot: Получение и обновление SSL сертификатов от Let's Encrypt.
+    """)
+    st.write('---')
+
+    st.header('API для Блога на Django Rest Framework')
+    st.write("""
+    :link: GitHub репозиторий: [AskharovA/DRF_blog](https://github.com/AskharovA/DRF_blog)\n
+    RESTful API, разработанное с использованием Django Rest Framework, предназначено для управления блогом.\n
+    Реализованный функционал:
+    - Набор функций для создания, чтения, обновления и удаления (CRUD) постов блога
+    - Безопасная система аутентификации с использованием JSON Web Tokens (JWT)
+    - Модульные и интеграционные тесты
+    - Кэширование ответов
+    - Документация с помощью Swagger
+    - Пагинация для управления большим объемом постов
+    - Комментарии к постам
+    - Добавление тегов к постам\n
+    """)
+    st.write('---')
+
+    st.header('DarkPlayer - MP3 плеер на Python')
+    st.image('media/DarkPlayer.jpg', use_column_width=True)
+    st.write("""
+    :link: GitHub репозиторий: [AskharovA/MP3Player-Python](https://github.com/AskharovA/MP3Player-Python)\n
+    Приложение написано по принципам ООП. Создана для удобного создания плейлистов из локальных .mp3 файлов.\n
+    Стек технологии:
+    - Язык программирования: Python
+    - GUI интерфейс приложения: CustomTkinter
+    - Работа с аудио: PyGame\n
+    Возможности:
+    - Воспроизведение .mp3 файлов
+    - Создание, сохранение и загрузка плейлистов
+    - Удобное управление и контроллеры
+    - Добавление из YouTube роликов без авторских прав\n
+    """)
+
+    st.markdown("""
+    <style>
+        * {
+            text-align: justify;
+        }
+        img {
+            border-radius: 15px;
         }
     </style>
     """, unsafe_allow_html=True)
