@@ -10,7 +10,7 @@ font_awesome_css = st.write(
 )
 
 st.title("Асхаров А.")
-st.subheader("Python программист и Backend разработчик")
+st.subheader("Python Backend разработчик")
 
 with st.container():
     selected = option_menu(
@@ -57,7 +57,6 @@ if selected == 'О себе':
         - Создание Backend веб-приложений с помощью :orange[**Django**]
         - Создание REST API с помощью :orange[**Django REST Framework**]
         - Работа с реляционной базой данных :orange[**PostgreSQL**]
-        - Работа с нереляционной базой данных :orange[**MongoDB**]
         - Создание асинхронных задач :orange[**Celery**]
         - Работа с Вебсокетами
         - Знание Frontend веб-технологии:
@@ -68,7 +67,6 @@ if selected == 'О себе':
         - Работа с кодом и системой управления версии :orange[**Git**], :orange[**GitHub**], :orange[**GitFlow**]
         - Контейнеризация и оркестрация с помощью :orange[**Docker**] и :orange[**Docker-Compose**]
         - Развертывание (:orange[**Deploy**]) веб-приложений на виртуальных серверах (:orange[**VPS**])
-        - Установка :orange[**SSL**] сертификтов
         """
     )
     st.write('---')
@@ -120,7 +118,7 @@ if selected == 'О себе':
     st.write('---')
     st.header("Дополнительная информация")
     st.write("""
-    - Английский язык: B1 (Intermediate)
+    - Английский язык: A2 (Pre-Intermediate)
     - Личные качества:
         - Способность быстро обучаться
         - Адаптивность
